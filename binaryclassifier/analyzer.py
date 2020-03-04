@@ -1,8 +1,10 @@
+from binaryclassifier.plotting.colors import THEME_COLORS
 from binaryclassifier.plotting import (
     plot_roc_curve, 
     plot_prediction_density, 
-    plot_quantiles)
-from binaryclassifier.plotting.colors import THEME_COLORS
+    plot_quantiles,
+    plot_ks)
+
 
 class Analyzer:
     
@@ -19,6 +21,9 @@ class Analyzer:
 
     def plot_quantiles(self, color=THEME_COLORS[0], **kwargs):
         return plot_quantiles(self.y_true, self.scores, color=color, **kwargs)
+
+    def plot_ks(self, colors=THEME_COLORS, **kwargs):
+        return plot_ks(self.y_true, self.scores, colors=colors, **kwargs)
 
 
 
