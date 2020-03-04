@@ -1,1 +1,3 @@
 from binaryclassifier.plotting.roc import plot_roc_curve
+from binaryclassifier.plotting.prediction_density import plot_prediction_density
+
