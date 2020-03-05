@@ -3,7 +3,9 @@ from binaryclassifier.plotting import (
     plot_roc_curve, 
     plot_prediction_density, 
     plot_quantiles,
-    plot_ks)
+    plot_ks,
+    confusion_matrix,
+    plot_confusion_matrix)
 
 
 class Analyzer:
@@ -24,6 +26,10 @@ class Analyzer:
 
     def plot_ks(self, colors=THEME_COLORS, **kwargs):
         return plot_ks(self.y_true, self.scores, colors=colors, **kwargs)
+
+    def plot_confusion_matrix(self, cmap='winter', figsize=(6,6), **kwargs):
+        cm = confusion_matrix(self.y_true, self.preds)
+        return plot_confusion_matrix(cm, cmap=cmap, figsize=figsize, **kwargs)
 
 
 
