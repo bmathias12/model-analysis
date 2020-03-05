@@ -4,3 +4,4 @@ from binaryclassifier.plotting.quantile_plot import plot_quantiles
 from binaryclassifier.plotting.ks import plot_ks
 from binaryclassifier.plotting.confusionmatrix import (
     plot_confusion_matrix, confusion_matrix)
+from binaryclassifier.plotting.precision_recall import plot_precision_recall

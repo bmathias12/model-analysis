@@ -5,7 +5,8 @@ from binaryclassifier.plotting import (
     plot_quantiles,
     plot_ks,
     confusion_matrix,
-    plot_confusion_matrix)
+    plot_confusion_matrix,
+    plot_precision_recall)
 
 
 class Analyzer:
@@ -27,9 +28,13 @@ class Analyzer:
     def plot_ks(self, colors=THEME_COLORS, **kwargs):
         return plot_ks(self.y_true, self.scores, colors=colors, **kwargs)
 
-    def plot_confusion_matrix(self, cmap='winter', figsize=(6,6), **kwargs):
+    def plot_confusion_matrix(self, cmap='winter', **kwargs):
         cm = confusion_matrix(self.y_true, self.preds)
-        return plot_confusion_matrix(cm, cmap=cmap, figsize=figsize, **kwargs)
+        return plot_confusion_matrix(cm, cmap=cmap, **kwargs)
+
+    def plot_precision_recall(self, color=THEME_COLORS[0], **kwargs):
+        return plot_precision_recall(
+            self.y_true, self.scores, color=color, **kwargs)
 
 
 
