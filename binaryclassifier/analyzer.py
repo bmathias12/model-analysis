@@ -29,8 +29,8 @@ class Analyzer:
     def plot_ks(self, colors=THEME_COLORS, **kwargs):
         return plot_ks(self.y_true, self.scores, colors=colors, **kwargs)
 
-    def plot_confusion_matrix(self, cmap='winter', **kwargs):
-        cm = confusion_matrix(self.y_true, self.preds)
+    def plot_confusion_matrix(self, cmap='winter', normalize=False, **kwargs):
+        cm = confusion_matrix(self.y_true, self.preds, normalize=normalize)
         return plot_confusion_matrix(cm, cmap=cmap, **kwargs)
 
     def plot_precision_recall(self, color=THEME_COLORS[0], **kwargs):
